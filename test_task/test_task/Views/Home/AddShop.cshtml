@@ -1,0 +1,38 @@
+﻿@model test_task.Models.Shop
+<h4>Add new shop</h4>
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div class="col-lg-10">
+        <div class="well">
+            <form class="bs-example form-horizontal">
+                <fieldset>
+                    <div class="form-group">
+                        <p class="col-lg-3 control-label"> Name</p>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(m => m.Name, new { @class = "form-control", @placeholder = "" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p class="col-lg-3 control-label"> Address </p>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(m => m.Adress, new { @class = "form-control", @placeholder = "" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <p class="col-lg-3 control-label"> Work time </p>
+                        <div class="col-lg-8">
+                            @Html.TextBoxFor(m => m.WorkTime, new { @class = "form-control", @placeholder = "" })
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-lg-10 col-lg-offset-6">
+                            <input type="submit" class="btn btn-success" value="Submit" />
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+}
